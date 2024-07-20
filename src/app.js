@@ -29,6 +29,7 @@ import config from "./config/config.js";
 import MongoSingleton from "./config/mongodb-singleton.js";
 import cors from 'cors';
 import { addLogger } from "./config/logger_CUSTOM.js";
+import process from './process.js'
 
 
 
@@ -54,7 +55,7 @@ const hbs = exphbs.create({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-const MONGO_URL = 'mongodb+srv://josedasilva1999:Olivia2024@cluster0.elp8ja0.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0';
+// const MONGO_URL = 'mongodb+srv://josedasilva1999:Olivia2024@cluster0.elp8ja0.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0';
 const connectMongo = async () => {
     try {
         await MongoSingleton.getInstance()
@@ -79,7 +80,7 @@ app.use(cors(corsOptions));
 //session
 app.use(session({
     store:MongoStore.create({
-        mongoUrl:MONGO_URL,
+        mongoUrl:config.mongoUrl,
         mongoOptions:{useNewUrlParser:true, useUnifiedTopology: true},
         ttl: 10 * 60 ,
     }),
