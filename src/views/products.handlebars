@@ -1,0 +1,45 @@
+<div id="logout">
+    <h1>Bienvenido!!</h1>
+    <p>Nombre: {{user.name}}</p>
+    <input type="button" value="logout">
+    <button><a href="/message">Ir al chat</a></button>
+</div>
+
+
+
+<h1>Productos</h1>
+<div class="product-css">
+    <div>
+        {{#each result.docs}}
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <button class="btn btn-primary buttonAdd" data-id="{{this.id}}">Añadir al carrito</button>
+            </div>
+        </div>
+        <br />
+        {{/each}}
+    </div>
+</div>
+
+
+
+<div>
+    {{#if result.hasPrevPage}}
+    <a href="{{result.prevLink}}">&lt;&lt; Anterior</a>
+    {{/if}}
+
+    &nbsp; {{result.page}} &nbsp;
+
+    {{#if result.hasNextPage}}
+    <a href="{{result.nextLink}}">Siguiente &gt;&gt;</a>
+    {{/if}}
+</div>
+
+</div>
+
+
+<script src="/js/logout.js"></script>
+<script src="/js/addProduct.js"></script>

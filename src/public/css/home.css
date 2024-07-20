@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home-css {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    margin-left: 90px;
+}
+.card{
+    width: 400px;
+    height: 400px;
+}
