@@ -7,8 +7,11 @@ const environment = program.opts().mode;
 
 
 
-dotenv.config();
-
+dotenv.config({
+    path: environment === "production" ? "./src/config/.env.production" : "./src/config/.env.development"
+});
+console.log(process.env.SERVER_PORT)
+console.log(process.env.MONGO_URL)
 
 
 export default {
