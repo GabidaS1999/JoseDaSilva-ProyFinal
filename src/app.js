@@ -77,17 +77,17 @@ app.use(cors(corsOptions));
 
 
 
-//session
-app.use(session({
-    store:MongoStore.create({
-        mongoUrl:config.mongoUrl,
-        mongoOptions:{useNewUrlParser:true, useUnifiedTopology: true},
-        ttl: 10 * 60 ,
-    }),
-    secret:'cod3rS3cr3t',
-    resave: true,
-    saveUninitialized: true
-}))
+// //session
+// app.use(session({
+//     store:MongoStore.create({
+//         mongoUrl:config.mongoUrl,
+//         mongoOptions:{useNewUrlParser:true, useUnifiedTopology: true},
+//         ttl: 10 * 60 ,
+//     }),
+//     secret:'cod3rS3cr3t',
+//     resave: true,
+//     saveUninitialized: true
+// }))
 
 
 
