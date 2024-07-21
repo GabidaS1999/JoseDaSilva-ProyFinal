@@ -1,45 +1,42 @@
-<div id="logout">
+<div class="container2" id="logout">
     <h1>Bienvenido!!</h1>
     <p>Nombre: {{user.name}}</p>
     <input type="button" value="logout">
     <button><a href="/message">Ir al chat</a></button>
 </div>
 
-
-
-<h1>Productos</h1>
-<div class="product-css">
-    <div>
-        {{#each result.docs}}
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <p class="card-text">{{this.description}}</p>
-                <button class="btn btn-primary buttonAdd" data-id="{{this.id}}">Añadir al carrito</button>
-            </div>
-        </div>
-        <br />
-        {{/each}}
-    </div>
+<div class="products-header">
+    <h1>Productos</h1>
+    <a href="/carts/{{CartId}}" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
 </div>
 
+<div class="product-css">
+    {{#each result.docs}}
+    <div class="card">
+        <img src="{{this.thumbnails}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <button class="btn btn-primary buttonAdd" data-id="{{this.id}}">Añadir al carrito</button>
+        </div>
+    </div>
+    <br />
+    {{/each}}
+</div>
 
-
-<div>
+<div class="pagination">
     {{#if result.hasPrevPage}}
     <a href="{{result.prevLink}}">&lt;&lt; Anterior</a>
     {{/if}}
 
-    &nbsp; {{result.page}} &nbsp;
+    <span class="current-page">{{result.page}}</span>
 
     {{#if result.hasNextPage}}
     <a href="{{result.nextLink}}">Siguiente &gt;&gt;</a>
     {{/if}}
 </div>
-
-</div>
-
 
 <script src="/js/logout.js"></script>
 <script src="/js/addProduct.js"></script>

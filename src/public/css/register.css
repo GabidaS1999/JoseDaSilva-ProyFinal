@@ -1,5 +1,5 @@
-/* Estilos generales */
-/* body {
+/* Estilos generales
+body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
@@ -33,17 +33,15 @@ form {
     align-items: center;
 }
 
-.mb-3 {
+form label {
     width: 100%;
-    margin-bottom: 15px;
-}
-
-.form-label {
+    text-align: left;
+    margin-top: 10px;
     font-size: 1em;
     color: #333;
 }
 
-.form-control {
+form input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -52,22 +50,8 @@ form {
     margin-top: 5px;
 }
 
-.form-control:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.form-text {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 5px;
-}
-
-/* Estilos para el botón de envío */
-.btn {
-    width: 100%;
-    padding: 10px;
+form input[type="submit"] {
+    margin-top: 20px;
     background-color: #007bff;
     border: none;
     color: #fff;
@@ -77,7 +61,7 @@ form {
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+form input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -104,9 +88,9 @@ a:hover {
         padding: 15px;
     }
 
-    .form-label,
-    .form-control,
-    .btn {
+    form label,
+    form input,
+    form input[type="submit"] {
         font-size: 0.9em;
     }
 }

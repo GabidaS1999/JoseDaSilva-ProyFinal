@@ -72,17 +72,6 @@ router.get('/logout', async (req, res) => {
 });
 
 
-// router.get('/login', (req, res) => {
-//     const { email, password } = req.query;
-//     if (email !== 'adminCoder@coder.com' || password !== 'adminCod3r123') {
-//         return res.status(401).send("Error de logueo, verifique los datos")
-//     } else {
-//         req.session.user = username;
-//         req.session.admin = true;
-//         res.send('Login success')
-//     }
-// });
-
  export function auth(req, res, next) {
     if (req.user && req.user.role === 'admin') {
         next();
@@ -199,7 +188,11 @@ router.get('/carts/:cid', async (req, res) => {
         const carrito = await cartsModel.findById(cid).populate('products.product').lean();
 
         if (carrito) {
-            res.render("carts", { carrito });
+            res.render("carts", { 
+                carrito: carrito,
+                style: 'carrito.css'
+
+             });
         } else {
             res.send({ msg: "Carrito no encontrado" });
         }

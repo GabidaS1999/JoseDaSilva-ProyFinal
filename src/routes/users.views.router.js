@@ -7,12 +7,14 @@ const router = Router();
 
 router.get("/login", (req,res)=>{
     res.render('login',{
-        style:"login.css"
+        style:'login.css'
     })
 });
 
 router.get("/register", (req,res)=>{
-    res.render('register')
+    res.render('register',{
+        style:'register.css'
+    })
 });
 
 

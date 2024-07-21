@@ -1,5 +1,40 @@
 <div class="private">
     <h1>¡¡Bienvenido administrador!!</h1>
     <br>
-    <button class="btn btn-primary "><a href="/private" style="color:white">Crear productos</a></button>
+    <h1>Crear Nuevo Producto</h1>
+    <div>
+        <form action="/api/products" method="POST" class="form-private">
+            <div class="mb-3">
+                <label for="title" class="form-label">Título:</label>
+                <input type="text" id="title" name="title" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descripción:</label>
+                <textarea id="description" name="description" class="form-control" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Precio:</label>
+                <input type="number" id="price" name="price" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Categoria:</label>
+                <input type="string" id="category" name="category" class="form-control" required>
+            </div>
+              <div class="mb-3">
+                <label for="thumbnails" class="form-label">Link de imagen:</label>
+                <input type="string" id="thumbnails" name="thumbnails" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="code" class="form-label">Codigo de producto:</label>
+                <input type="string" id="code" name="code" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock:</label>
+                <input type="number" id="stock" name="stock" class="form-control" required>
+            </div>
+            <a href="/"><button type="submit" class="btn btn-primary ">Crear Producto</button></a>
+            
+        </form>
+    </div>
+
 </div>
