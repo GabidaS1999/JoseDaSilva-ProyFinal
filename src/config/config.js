@@ -15,7 +15,7 @@ console.log(process.env.MONGO_URL)
 
 
 export default {
-    port: process.env.SERVER_PORT,
+    port: process.env.SERVER_PORT || 8080,
     mongoUrl: process.env.MONGO_URL,
     persistence: program.opts().persist,
     environment:environment,
