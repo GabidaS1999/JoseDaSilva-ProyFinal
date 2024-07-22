@@ -1,10 +1,10 @@
-/* Estilos generales */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
 
-/* Estilos para el contenedor principal */
+
 .container2 {
     width: 100%;
     max-width: 400px;
@@ -16,21 +16,21 @@ body {
     text-align: center;
 }
 
-/* Estilos para el título */
+
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Estilos para el párrafo */
+
 p {
     font-size: 1.2em;
     margin-bottom: 20px;
     color: #555;
 }
 
-/* Estilos para los botones */
+
 input[type="button"],
 button {
     width: 100%;
@@ -50,7 +50,6 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Estilos para el enlace dentro del botón */
 button a {
     color: #fff;
     text-decoration: none;
@@ -60,7 +59,7 @@ button a:hover {
     text-decoration: underline;
 }
 
-/* Estilos para la sección de productos */
+
 .product-css {
     display: flex;
     flex-direction: row;
@@ -68,6 +67,7 @@ button a:hover {
     gap: 20px;
     justify-content: center;
     padding: 20px;
+    object-fit: cover;
 }
 
 .card {
@@ -77,12 +77,14 @@ button a:hover {
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
+    
 }
 
 .card-img-top {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-bottom: 1px solid #ddd;
+    object-fit: cover;
 }
 
 .card-body {
@@ -115,7 +117,7 @@ button a:hover {
     background-color: #0056b3;
 }
 
-/* Estilos para la paginación */
+
 .pagination {
     text-align: center;
     margin-top: 20px;
@@ -167,7 +169,7 @@ button a:hover {
     color: #0056b3;
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 768px) {
     .product-css {
         flex-direction: column;

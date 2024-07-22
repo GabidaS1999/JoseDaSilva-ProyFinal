@@ -19,10 +19,7 @@ router.get("/suma", (req, res) => {
 })
 
 router.get('/setCookie', (req, res) => {
-    //sin firma
-    // res.cookie("CoderCookie", "Eso es una cookie de prueba - Cookie set", {maxAge: 50000}).send('Cookie asignada con exito')
 
-    //con firma
     res.cookie("CoderCookie", "Eso es una cookie de prueba - Cookie set", { maxAge: 50000, signed: true }).send('Cookie asignada con exito')
 });
 
@@ -57,7 +54,6 @@ router.get('/logout', async (req, res) => {
             await cartsModel.deleteOne({ user: req.user._id });
         }
 
-        // Destruir la sesión
         req.session.destroy(error => {
             if (error) {
                 console.error("Error al cerrar la sesión:", error);
@@ -86,15 +82,14 @@ router.get('/private', auth, (req, res) => {
 
 
 
-
-
-
 router.get('/realtimeproducts', (req, res) => {
     res.render('realTimeProducts')
 });
 
 router.get('/message', (req, res) => {
-    res.render("messages");
+    res.render("messages",{
+        style:'mje.css'
+    });
 });
 
 router.get('/products', passport.authenticate('jwt', { session: false }), async (req, res) => {
@@ -160,7 +155,7 @@ router.get('/', async (req, res) => {
     sortOptions['price'] = sortPrice === 'asc' ? 1 : -1;
 
     if (!page) page = 1;
-    if (!limit) limit = 10;
+    if (!limit) limit = 100;
 
     let query = {};
     if (match) {
@@ -186,6 +181,12 @@ router.get('/carts/:cid', async (req, res) => {
     try {
         const cid = req.params.cid;
         const carrito = await cartsModel.findById(cid).populate('products.product').lean();
+        let total = 0;
+        carrito.products.forEach(item => {
+            total += item.price * item.quantity;
+        });
+
+        carrito.total = total.toFixed(2);
 
         if (carrito) {
             res.render("carts", { 

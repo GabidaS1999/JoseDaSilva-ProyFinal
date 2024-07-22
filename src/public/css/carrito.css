@@ -1,10 +1,10 @@
-/* Estilos generales */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
 
-/* Estilos para el contenedor principal */
+
 .container {
     width: 100%;
     max-width: 800px;
@@ -16,7 +16,7 @@ body {
     
 }
 
-/* Estilos para el título */
+
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
@@ -24,7 +24,7 @@ h1 {
     text-align: center;
 }
 
-/* Estilos para los productos */
+
 .container > div {
     background-color: #f9f9f9;
     padding: 15px;
@@ -38,7 +38,7 @@ h1 {
     color: #555;
 }
 
-/* Estilos para los botones */
+
 button {
     width: 100%;
     max-width: 200px;
@@ -57,7 +57,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Estilos para el enlace dentro del botón */
+
 button a {
     color: #fff;
     text-decoration: none;
@@ -68,7 +68,7 @@ button a:hover {
     text-decoration: underline;
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;

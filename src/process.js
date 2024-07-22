@@ -1,6 +1,6 @@
 import {Command} from 'commander';
 
-const program = new Command(); //Crea la instancia de comandos de commander
+const program = new Command(); 
 
 program
     .option('-d', "Variable para debug", false)
@@ -9,7 +9,7 @@ program
     .option('--mode <mode>', "Modo de trabajo del server", 'development')
 
 
-program.parse();//Parsea los comandos y verifica que esten correctos
+program.parse();
 
 
 //Listeners

@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const productId = event.target.getAttribute('data-id');
             const cartId = localStorage.getItem('cartId');
 
-            console.log('Product ID:', productId);  // Debugging output
-            console.log('Cart ID:', cartId);        // Debugging output
+            console.log('Product ID:', productId);  
+            console.log('Cart ID:', cartId);        
 
             if (!productId || !cartId) {
                 console.error('Product ID or Cart ID is missing!');
@@ -20,7 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }).then(result => {
                 if (result.status === 200) {
-                    console.log('Producto añadido al carrito exitosamente');
+                    Toastify({
+                        text: "Producto añadido al carrito exitosamente",
+                        duration: 3000, 
+                        close: true, 
+                        gravity: "top", 
+                        position: "right", 
+                        backgroundColor: "#28a745", 
+                        stopOnFocus: true 
+                    }).showToast();
                 } else {
                     console.error('Error al añadir producto al carrito');
                     result.json().then(json => console.error(json.message));

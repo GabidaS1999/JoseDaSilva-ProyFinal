@@ -1,4 +1,4 @@
-/* Contenedor principal */
+
 .home-css {
     display: flex;
     flex-wrap: wrap;
@@ -7,7 +7,7 @@
     justify-content: center;
 }
 
-/* Estilo para cada tarjeta de producto */
+
 .card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -63,10 +63,6 @@
     background-color: #0056b3;
 }
 
-/* div {
-    text-align: center;
-    margin: 20px 0;
-} */
 
 a {
     color: #007bff;

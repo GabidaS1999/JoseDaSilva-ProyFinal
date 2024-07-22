@@ -6,7 +6,6 @@ export default class MessagesService {
             let message = await messageModel.find();
             return message;
         } catch (error) {
-            console.error("Error al obtener carrito:", error);
             throw error;
         }
     }

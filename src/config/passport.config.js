@@ -57,15 +57,14 @@ const initializePassport = () => {
             secretOrKey: PRIVATE_KEY
 
         }, async (jwt_payload, done) => {
-            console.log(`Entrando a passpord strategy con jwt`)
+
             try {
 
-                console.log(`JWT obtenido del PayLoad` + jwt_payload);
                 return done(null, jwt_payload.user);
 
 
             } catch (error) {
-                console.log(error)
+
                 return done(error)
             }
         }
@@ -78,7 +77,7 @@ const initializePassport = () => {
 
             try {
                 if(!first_name || !email){
-                    //Create custom Error
+
                     CustomError.createError({
                         name: "User creation error",
                         cause: generateUserErrorInfo({first_name, email}),
@@ -105,7 +104,7 @@ const initializePassport = () => {
 
                 return done(null, result)
             }catch (error) {
-                console.error(error.cause);
+
                 return done({error: error.code, message:error.message});
             }
         }
@@ -116,8 +115,6 @@ const initializePassport = () => {
         async (req, username, password, done) => {
             try {
                 const user = await userModel.findOne({ email: username })
-                console.log("Usuario encontrado: ");
-                console.log(user);
 
                 if (!user) {
                     console.warn("Credenciales invalidas para: " + username);
@@ -156,11 +153,7 @@ const cookieExtractor = req => {
     let token = null;
     console.log("Entrando a Cookie Extractor");
     if (req && req.cookies) {
-        console.log("Cookies presentes: ");
-        console.log(req.cookies);
         token = req.cookies['jwtCookieToken'];
-        console.log("Token obtenido desde Cookie")
-        console.log(token)
     }
     return token;
 }

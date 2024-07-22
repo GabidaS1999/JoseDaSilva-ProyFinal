@@ -1,9 +1,7 @@
 import { productService } from "../service/factory.js";
 import { generateProduct } from "../utils.js";
 import __dirname from "../utils.js";
-import CustomError from "../service/errors/CustomError.js";
-import { generateProductErrorInfo } from "../service/errors/messages/product-creation-error-info.js";
-import EErrors from "../service/errors/errors-enum.js";
+
 
 export const getProducts = async (req, res) => {
     try {
@@ -21,7 +19,7 @@ export const getProducts = async (req, res) => {
 
 
 const getDatosControllers = async (req, res) => {
-    //Una logica para ir a buscar la info
+
     let datos = await productService.getAll();
 
 

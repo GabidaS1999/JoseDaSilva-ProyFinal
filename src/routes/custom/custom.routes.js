@@ -11,7 +11,7 @@ export default class CustomRouter {
     getRouter(){
         return this.router;
     }
-    init(){}; //Esto inicializa las clases heredadas
+    init(){}; 
 
     get(path, policies, ...callbacks){
         console.log("Entrando por Get a custom router con path" + path);

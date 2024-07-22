@@ -149,7 +149,6 @@ router.post('/:cid/purchase', passport.authenticate('jwt', { session: false }), 
             if (product.stock >= item.quantity) {
                 totalAmount += product.price * item.quantity;
 
-                // Asegurarte de que este valor sea numérico
                 await productService.updateProduct(item._id, { stock: product.stock - item.quantity });
             } else {
                 updatedProducts.push(item); 

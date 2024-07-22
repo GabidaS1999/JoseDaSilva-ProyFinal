@@ -47,7 +47,6 @@ export default class CartService {
                 });
             }
 
-            // Guardar el carrito actualizado
             await cart.save();
 
             return { success: true, cart };

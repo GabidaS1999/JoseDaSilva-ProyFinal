@@ -97,6 +97,7 @@ router.post('/', async (req, res) => {
         await productService.save({title: product.title,description: product.description, price: product.price, category: product.category, thumbnails: product.thumbnails, code: product.code, stock: product.stock});
         socket.emit('newProduct', product);
         res.send({ status: 'success', msg: `Producto creado` });
+    
 
     } catch (error) {
         console.error(`Error al agregar un nuevo producto: ${error}`);

@@ -1,4 +1,4 @@
-/* Contenedor principal */
+
 div {
     max-width: 600px;
     margin: 0 auto;
@@ -9,14 +9,14 @@ div {
     background-color: #f9f9f9;
 }
 
-/* Estilo para el título principal */
+
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Estilo para el botón */
+
 button {
     background-color: #333;
     color: white;
@@ -32,7 +32,7 @@ button:hover {
     background-color: #555;
 }
 
-/* Estilo para los encabezados secundarios */
+
 h2 {
     font-size: 1.5em;
     margin-top: 30px;
@@ -47,7 +47,7 @@ p {
     color: #333;
 }
 
-/* Estilo para los enlaces */
+
 a {
     color: #007bff;
     text-decoration: none;

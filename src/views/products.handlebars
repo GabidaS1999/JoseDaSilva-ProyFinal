@@ -1,7 +1,7 @@
-<div class="container2" id="logout">
+<div class="container2" >
     <h1>Bienvenido!!</h1>
     <p>Nombre: {{user.name}}</p>
-    <input type="button" value="logout">
+    <input id="logout" type="button" value="logout">
     <button><a href="/message">Ir al chat</a></button>
 </div>
 
@@ -19,6 +19,7 @@
         <div class="card-body">
             <h5 class="card-title">{{this.title}}</h5>
             <p class="card-text">{{this.description}}</p>
+            <p class="card-text">${{this.price}}</p>
             <button class="btn btn-primary buttonAdd" data-id="{{this.id}}">Añadir al carrito</button>
         </div>
     </div>

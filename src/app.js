@@ -1,8 +1,5 @@
 import express from "express";
-import swaggerJSDoc from "swagger-jsdoc";
-import swaggerUiExpress from 'swagger-ui-express';
 import { Server } from 'socket.io';
-import mongoose from 'mongoose';
 import exphbs from 'express-handlebars';
 import __dirname from './utils.js';
 import Handlebars from 'handlebars';
@@ -32,11 +29,7 @@ import { addLogger } from "./config/logger_CUSTOM.js";
 import process from './process.js'
 
 
-
-
-let fileStore =  FileStore(session);
 let productService = new ProductsService();
-let productManager = new ProductManager();
 let messageService = new MessagesService();
 const app = express();
 const SERVER_PORT = config.port;
@@ -55,7 +48,7 @@ const hbs = exphbs.create({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// const MONGO_URL = 'mongodb+srv://josedasilva1999:Olivia2024@cluster0.elp8ja0.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0';
+
 const connectMongo = async () => {
     try {
         await MongoSingleton.getInstance()
@@ -71,7 +64,7 @@ app.use(addLogger)
 
 //cors
 const corsOptions = {
-    credentials: true, // Permitir cookies
+    credentials: true,
   };
 app.use(cors(corsOptions));
 
@@ -104,8 +97,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 
-
-//app.engine('handlebars', handlebars.engine());
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 
@@ -137,7 +128,7 @@ app.use("/api/extend/users", usersExtendRouter.getRouter());
 
 //LOGGER
 app.get("/loggerTest", (req, res)=>{
-    // Determinada logica de la ruta
+
     req.logger.warning("Mensaje de prueba de warning en un endpoint: /loggerTest")
     req.logger.debug("Mensaje de prueba de debug en un endpoint: /loggerTest")
     req.logger.info("Mensaje de prueba de info en un endpoint: /loggerTest")
@@ -151,32 +142,10 @@ app.use(cookieParser("Cod3rS3cr3tC0d3"));
 
 
 
-
-
-
-
-
-
 const httpServer = app.listen(SERVER_PORT, () => {
     console.log(`Server run on port: ${SERVER_PORT}`);
 
-    //console.log(process.argv.slice(2));
-
-    // process.exit(5)
-
-    //Esta excepcion no fue capturada
-    //console()
-
-
 });
-
-
-
-
-
-
-
-
 
 
 const socketServer = new Server(httpServer);

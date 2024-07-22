@@ -12,7 +12,6 @@ export default class ProductsService {
 
             return products;
         } catch (error) {
-            console.error("Error al obtener productos:", error);
             throw error;
         }
     };
@@ -37,7 +36,6 @@ export default class ProductsService {
             let product = await productModel.findOne({ code: code });
             return product ? product.toObject() : null;
         } catch (error) {
-            console.error("Error al obtener producto por código:", error);
             throw error;
         }
     }
@@ -46,7 +44,6 @@ export default class ProductsService {
             const product = await productModel.findByIdAndUpdate(productId, updateFields, { new: true });
             return product;
         } catch (error) {
-            console.error('Error al actualizar producto:', error);
             throw error;
         }
     }
@@ -57,7 +54,6 @@ export default class ProductsService {
             let productDelete = await productModel.deleteOne({ _id: id });
             return productDelete;
         } catch (error) {
-            console.error(`Error al eliminar producto en la base de datos: ${error}`);
             throw error;
         }
     };

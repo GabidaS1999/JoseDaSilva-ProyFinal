@@ -1,25 +1,27 @@
- <h1>Todos los productos</h1>
+<h1>Todos los productos</h1>
 
-    <div class="home-css">
-        {{#each result.docs}}
-        <div class="card">
-            <img src="{{this.thumbnails}}" alt="">
-            <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <p class="card-text">{{this.description}}</p>
-                <a href="/users/login" class="btn btn-primary">Iniciar sesión para comprar</a>
-            </div>
-        </div>
-        {{/each}}
-        <div>
-            {{#if result.hasPrevPage}}
-            <a href="{{result.prevLink}}">&lt;&lt; Anterior</a>
-            {{/if}}
-
-            &nbsp; {{result.page}} &nbsp;
-
-            {{#if result.hasNextPage}}
-            <a href="{{result.nextLink}}">Siguiente &gt;&gt;</a>
-            {{/if}}
+<div class="home-css">
+    {{#each result.docs}}
+    <div class="card">
+        <img src="{{this.thumbnails}}" alt="">
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <a href="/users/login" class="btn btn-primary">Iniciar sesión para comprar</a>
         </div>
     </div>
+
+    {{/each}}
+
+</div>
+<div>
+    {{#if result.hasPrevPage}}
+    <a href="{{result.prevLink}}">&lt;&lt; Anterior</a>
+    {{/if}}
+
+    &nbsp; {{result.page}} &nbsp;
+
+    {{#if result.hasNextPage}}
+    <a href="{{result.nextLink}}">Siguiente &gt;&gt;</a>
+    {{/if}}
+</div>

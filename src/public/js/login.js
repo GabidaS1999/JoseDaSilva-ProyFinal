@@ -21,7 +21,7 @@ form.addEventListener('submit', e => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('jwtToken')}` // Ajusta si usas otro método de autenticación
+                    'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
                 }
             })
                 .then(response => response.json())
@@ -36,7 +36,6 @@ form.addEventListener('submit', e => {
                             localStorage.setItem('cartId', json.cartId);
                             console.log("Cookie generada");
                             console.log(document.cookie)
-                            alert("Login realizado con exito y carrito creado")
                         })
                     window.location.replace('/products')
 
